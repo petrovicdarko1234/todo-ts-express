@@ -103,3 +103,31 @@ app
         }
     });
 ```
+
+10. BONUS working with files
+
+```js
+import { readFile, writeFile } from "fs/promises"
+
+async function readFromPath(path: string) {
+    const content = await readFile(path, "utf-8")
+
+    //do something with content...
+
+    //to parse json use
+    //Converts a JavaScript Object Notation (JSON) string into an object.
+    tasks = JSON.parse(content) as Task[]
+}
+
+async function writeToPath(path: string, content: string) {
+    await writeFile(path, content, "utf-8")
+}
+
+//example usage
+
+let tasks []Task = //...
+
+writeToPath("tasks.json", JSON.stringify(tasks))
+
+readFromPath("tasks.json")
+```
