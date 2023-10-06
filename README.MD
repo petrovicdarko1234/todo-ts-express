@@ -131,3 +131,15 @@ writeToPath("tasks.json", JSON.stringify(tasks))
 
 readFromPath("tasks.json")
 ```
+
+11. How to serve (same as github pages) your HTML/JS/CSS
+```js
+//serviraju se staticki fajlovi iz ovaj folder
+//kada odem na localhost:4000 on mi izbaci index.html
+//a mogu da odem i na localhost:4000/index.html
+//ako kazem window.location.href = "tasks.html" => localhost:4000/tasks.html
+//Server radi 2 posla, jedan je kao github pages servira staticki fajlovi (html + js + css + sta god jos)
+//A drugi posao je da ima http request response
+
+app.use(express.static("../Tasks/")) //GITHUB PAGES
+```
