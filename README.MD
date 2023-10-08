@@ -145,7 +145,7 @@ app.use(express.static("../Tasks/")) //GITHUB PAGES
 ```
 
 
-12.Cookie funnctions
+12.Cookie functions
 ```js
 function setCookie(name: string, val: string) {
     const date = new Date();
